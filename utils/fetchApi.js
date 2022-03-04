@@ -8,7 +8,7 @@ export const fetchApi = async(url) => {
             'x-rapidapi-host': 'bayut.p.rapidapi.com',
             'x-rapidapi-key': '563165fd77msh712d357bbad73a3p146d2ejsn66cbec4e9173'
         }
-    })
+    });
 
     return data;
 }
