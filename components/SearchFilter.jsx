@@ -8,7 +8,7 @@ import Image from 'next/image'
 const SearchFilter = () => (
     <Box>
         <Flex>
-            Hi
+            Hi REal Estate
         </Flex>
     </Box>
 );
