@@ -4,7 +4,6 @@ import {useRouter} from 'next/router'
 import {mdCancel} from 'react-icons/md'
 import Image from 'next/image'
 
-
 const SearchFilter = () => (
     <Box>
         <Flex>
@@ -12,5 +11,4 @@ const SearchFilter = () => (
         </Flex>
     </Box>
 );
-
 export default SearchFilter;
