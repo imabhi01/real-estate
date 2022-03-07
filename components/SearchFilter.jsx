@@ -5,10 +5,9 @@ import {mdCancel} from 'react-icons/md'
 import Image from 'next/image'
 
 const SearchFilter = () => (
-    <Box>
-        <Flex>
-            Hi REal Estate
-        </Flex>
-    </Box>
+    <Flex bg="gray.100" justifyContent="center" flexWrap="wrap">
+        
+    </Flex>
 );
+
 export default SearchFilter;
