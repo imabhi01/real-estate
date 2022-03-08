@@ -38,11 +38,9 @@ const Search = ({properties}) => {
             <Text fontSize="2xl" fontWeight="gray.100">
                 Properties {router.query.purpose}
             </Text>
-            
             <Flex flexWrap="wrap">
                 {properties.map((property) => <Property property={property} key={property.id} />)}
             </Flex>
-
             {properties.length === 0  && 
                 <Flex justifyContent="center" alignItems="center" flexDirection="column" marginTop="5" marginBottom="5">
                     <Image src={noResult} alt="no result" />
