@@ -9,6 +9,20 @@ import { baseUrl, fetchApi } from '../utils/fetchApi'
 
 export default function SearchFilters(){
     const [filters, setfilters] = useState(filterData);
+    const router = useRouter();
+    const searchProperties = (filterValues) => {
+        const path = router.pathName;
+        const { query } = router;
+        const values = getFilterValues(filterValues);
+
+        values.forEach((item) => {
+            if(item.value && filterValues?.[item.name]){
+                query[item.name] = item.value
+            }
+        })
+        router.push({ pathname: path, query: query });
+    }
+
     return (
         <Flex bg="gray.100" justifyContent="center" flexWrap="wrap">
             {filters?.map((filterItem) => (
@@ -17,9 +31,11 @@ export default function SearchFilters(){
                         bg="white.200"
                         placeholder={filterItem.placeholder}
                         w="fit-content"
+                        p="2"
+                        onChange={ (e) => searchProperties({[filterItem.queryName]: e.target.value})}
                     >
                         {filterItem?.items?.map((item) => (
-                            <option key={item.id}>
+                            <option key={item.value} value={item.value}>
                                 {item.name}
                             </option>
                         ))}
