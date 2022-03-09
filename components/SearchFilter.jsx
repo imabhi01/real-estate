@@ -9,13 +9,20 @@ import { baseUrl, fetchApi } from '../utils/fetchApi'
 
 export default function SearchFilters(){
     const [filters, setfilters] = useState(filterData);
-    console.log(filters);
     return (
-        <Flex bg="gray.100" justifyContent="center" alignItems="center">
-            {filters.map((filterItem) => (
+        <Flex bg="gray.100" justifyContent="center" flexWrap="wrap">
+            {filters?.map((filterItem) => (
                 <Box p="4" key={filterItem.queryName}>
-                    <Select bg="white.200">
-                        <option value="">{filterItem.placeholder}</option>
+                    <Select 
+                        bg="white.200"
+                        placeholder={filterItem.placeholder}
+                        w="fit-content"
+                    >
+                        {filterItem?.items?.map((item) => (
+                            <option key={item.id}>
+                                {item.name}
+                            </option>
+                        ))}
                     </Select>
                 </Box>
             ))}
