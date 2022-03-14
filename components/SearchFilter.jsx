@@ -44,5 +44,4 @@ export default function SearchFilters(){
             ))}
         </Flex>
     )
-
 }
